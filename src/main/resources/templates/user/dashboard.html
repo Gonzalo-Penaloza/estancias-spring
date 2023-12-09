@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://thymeleaf.org/extras/spring-security">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Estancias - EGG</title>
+	<link href="/css/style.css" rel="stylesheet" type="text/css" />
+	<script src="https://kit.fontawesome.com/d168e18a02.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<header th:replace="~{fragments/user/user_temp :: header}"></header>
+	<main>
+		<div class="welcome-cont">
+			<div class="welcome-msg">
+				<h3 id="w-text">Bienvenido de nuevo <span th:text="${user.alias}"></span></h3>
+			</div>
+		</div>
+		<div class="dash-cont">
+			<div class="dashboard">
+				<div class="title-section">
+					<p id="news">Seccion Cliente</p>
+				</div>
+				<div class="anchors-act">
+					<div class="actions">
+						<a href="/cliente/form" class="dash-link">Alta/Baja</a>
+					</div>
+					<div class="actions">
+						<a href="/casa/disponibles" class="dash-link">Buscar Estancia</a>
+					</div>
+					<div class="actions">
+						<a href="/estancias/mis-reservas" class="dash-link">Mis Reservas</a>
+					</div>
+				</div>
+				<div class="title-section">
+					<p id="news">Seccion Familia</p>
+				</div>
+				<div class="anchors-act">
+					<div class="actions">
+						<a href="/admin/lista-usuarios" class="dash-link">Alta/Baja</a>
+					</div>
+					<div class="actions">
+						<a href="/noticia/noticia_form.html" class="dash-link">Mis Casas</a>
+					</div>
+					<div class="actions">
+						<a href="/noticia/noticia_form.html" class="dash-link">Comentarios</a>
+					</div>
+				</div>
+			</div>
+			<div class="last-new">
+				<div class="label-text">
+					<label>ULTIMA NOTICIA</label>
+				</div>
+				<div class="last-title">
+					<h3 th:text="${noticia?.titulo}"></h3>
+				</div>
+				<div class="last-body">
+					<h3 th:text="${noticia?.cuerpo}"></h3>
+				</div>
+			</div>
+		</div>
+		</div>
+	</main>
+	<footer th:replace="~{fragments/user/user_temp :: footer}"></footer>
+</body>
+
+</html>

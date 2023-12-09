@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://thymeleaf.org/extras/spring-security">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Estancias - EGG</title>
+	<link href="/css/style.css" rel="stylesheet" type="text/css" />
+	<script src="https://kit.fontawesome.com/d168e18a02.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<header th:replace="~{fragments/user/user_temp :: header}"></header>
+	<main>
+		<div class="container-home srv">
+			<div class="cont-text">
+				<div class="cont-services">
+					<h2>Convierte en cliente!</h2>
+					<p>
+						"¡Descubre el escape perfecto para unas vacaciones inolvidables! Reserva tu estancia con
+						nosotros y sumérgete en la comodidad absoluta mientras creas recuerdos que perdurarán toda la
+						vida. Nuestro espacio está diseñado para brindarte una experiencia inigualable: desde
+						habitaciones acogedoras hasta servicios excepcionales, cada detalle está cuidadosamente planeado
+						para que tus vacaciones sean un auténtico deleite. ¿Qué esperas? Haz realidad tus sueños de unas
+						vacaciones inolvidables con nosotros."
+					</p>
+					<a th:href="@{/cliente/register}">Ser un cliente</a>
+				</div>
+			</div>
+			<div class="cont-text">
+				<div class="cont-services">
+					<h2>Convierte en Anfitrion!</h2>
+					<p>
+						"¿Tienes un espacio único y acogedor que quieres compartir con el mundo? Únete a nuestra
+						comunidad de anfitriones y convierte tu propiedad en el destino preferido para viajeros de todo
+						el mundo. Ofrece a los huéspedes una experiencia excepcional mientras generas ingresos
+						adicionales. Desde apartamentos modernos hasta casas rurales encantadoras, cualquier tipo de
+						alojamiento es bienvenido en nuestra plataforma. Únete a nosotros y permite que tu espacio sea
+						parte de las vacaciones inolvidables de nuestros huéspedes."
+					</p>
+					<a th:href="@{/familia/register}">Ser un Anfitrion</a>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<footer th:replace="~{fragments/user/user_temp :: footer}"></footer>
+</body>
+
+</html>

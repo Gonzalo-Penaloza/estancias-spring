@@ -1,0 +1,32 @@
+<header>
+    <nav>
+        <ul>
+            <li th:if="${session.usuariosession == null}">
+                <a  href="/login" class="btn-nav">Iniciar Sesion</a>
+            </li>
+            <li th:if="${session.usuariosession == null}">
+                <a  href="/registrar" class="btn-nav">Registrarse</a>
+            </li>           
+            <li th:if="${session.usuariosession != null}">
+                <a  href="/noticia/lista" class="btn-nav"> ... </a>
+            </li>
+            <li th:if="${session.usuariosession != null}">
+                <a  href="/logout" class="btn-nav">Cerrar Sesion</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container-text">
+        <h2><a href="/">Estancias EGG</a></h2>
+    </div>
+</header>
+
+<footer>
+        <p class="p-footer">Hecho por Gonzalo Peñaloza</p>
+        <ul>
+           <li><a class="btn-foot" href="https://github.com/gonzalo-penaloza" target="_blank"><i class="fa-brands fa-github fa-xl"></i></a></li>
+           <li><a class="btn-foot" href="https://www.linkedin.com/in/gonzalo-penaloza/" target="_blank"><i
+                    class="fa-brands fa-linkedin fa-xl"></i></a></li>
+           <li><a class="btn-foot" href="https://www.instagram.com/gonzalopenaloza_/" target="_blank"><i
+                    class="fa-brands fa-instagram fa-xl"></i></a></li>
+        </ul>
+</footer>

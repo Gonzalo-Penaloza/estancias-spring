@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://thymeleaf.org/extras/spring-security">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Estancias - EGG</title>
+	<link href="/css/style.css" rel="stylesheet" type="text/css" />
+	<script src="https://kit.fontawesome.com/d168e18a02.js" crossorigin="anonymous"></script>
+</head>
+<body>
+        <header th:replace="~{fragments/user/user_temp :: header}"></header>
+        <main>
+            <div class="container-form">
+                <form class="formulario" th:action="@{/cliente/register}" method="POST">
+                  
+                    <div class="div-label">
+                        <label>Conviertase en cliente!</label>
+                        <h5>Para eso necesitamos conocer mas acerca de usted...</h5>              
+                    </div>
+                    <div class="form-group my-3">   
+                        <label>Nombre y Apellido:</label>              
+                        <input type="text" class="form-control" name="nombre" placeholder="Titulo">  
+                    </div>
+                    
+                    <div class="form-group my-3">   
+                        <label>Direccion:</label>              
+                        <input type="text" class="form-control" name="calle" placeholder="Titulo">  
+                    </div>
+
+           			 <div class="form-group my-3">   
+                        <label>Altura:</label>              
+                        <input type="number" class="form-control" name="numero" placeholder="Titulo">  
+                    </div>
+                    
+                     <div class="form-group my-3">   
+                        <label>Ciudad:</label>              
+                        <input type="text" class="form-control" name="ciudad" placeholder="Titulo">  
+                    </div>
+                    
+                    <div class="form-group my-3">   
+                        <label>Codigo Postal:</label>              
+                        <input type="text" class="form-control" name="codPostal" placeholder="Titulo">  
+                    </div>
+                    
+                    <div class="form-group my-3">   
+                        <label>Pais:</label>              
+                        <input type="text" class="form-control" name="pais" placeholder="Titulo">  
+                    </div>
+                    
+                    <div class="form-group my-3">              
+                        <input type="hidden" class="form-control" name="email" th:value="${session.userSession.email}">  
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary"> Subir </button>
+                </form>
+            </div>
+        </main>
+        <footer th:replace="~{fragments/user/user_temp :: footer}"></footer>  
+        <script src="https://kit.fontawesome.com/d168e18a02.js" crossorigin="anonymous"></script>
+    </body>

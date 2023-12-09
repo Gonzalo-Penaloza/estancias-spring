@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://thymeleaf.org/extras/spring-security">
+
+<head>
+	<title>Noticiero EGG</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Estancias - EGG</title>
+	<link href="/css/style.css" rel="stylesheet" type="text/css" />
+	<script src="https://kit.fontawesome.com/d168e18a02.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<header th:insert="~{fragments/user/user_temp :: header}"></header>
+	<main>
+		<div class="container-form">
+
+			<form class="registro-form" th:action="@{/casa/register-house}" method="POST" enctype="multipart/form-data">
+
+				<div class="login-titulo">
+					<label>Registratar Casa!</label>
+				</div>
+				<div class="error-card" th:if="${error != null}">
+					<div class="error-content">
+						<h2>Error</h2>
+						<p th:text="${error}"></p>
+					</div>
+				</div>
+				<div class="sign-up">
+					<div class="form-group my-3">
+						<label>Ingrese la Calle:</label>
+						<input type="text" class="form-control" name="calle" placeholder="Calle" required>
+					</div>
+					<div class="form-group my-3">
+						<label>Altura:</label>
+						<input type="number" class="form-control" name="numero" placeholder="N°" required>
+					</div>
+					<div class="form-group my-3">
+						<label>Ciudad:</label>
+						<input type="text" class="form-control" name="ciudad" placeholder="Ciudad" required>
+					</div>
+					<div class="form-group my-3">
+						<label>Codigo Postal</label>
+						<input type="text" class="form-control" name="codPostal" placeholder="CP N°" required>
+					</div>
+					<div class="form-group my-3">
+						<label>Pais</label>
+						<input type="text" class="form-control" name="pais" placeholder="Pais" required>
+					</div>
+
+					<div class="form-group my-3">
+						<label>Cantidad de dias minimos:</label>
+						<input type="number" class="form-control" name="minDias" placeholder="Cantidad dias minimos"
+							required>
+					</div>
+					<div class="form-group my-3">
+						<label>Cantidad de dias maximos:</label>
+						<input type="number" class="form-control" name="maxDias" placeholder="Cantidad dias maximos"
+							required>
+					</div>
+					
+					
+					
+	
+
+					<div class="form-group my-3">
+						<label>Precio por dia:</label>
+						<input type="number" step="any" class="form-control" name="precio" placeholder="Precio en $"
+							required>
+					</div>
+
+					<div class="form-group my-3">
+						<input type="file" class="form-control-file" id="img" name="img">
+					</div>
+
+				</div>
+				<button type="submit" class="btn-sign btn-primary"> Registrarse </button>
+			</form>
+		</div>
+	</main>
+	<footer th:insert="~{fragments/user/user_temp :: footer}"></footer>
+</body>
+
+</html>

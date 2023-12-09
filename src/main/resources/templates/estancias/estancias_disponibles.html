@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://thymeleaf.org/extras/spring-security">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Estancias - EGG</title>
+	<link href="/css/style.css" rel="stylesheet" type="text/css" />
+	<script src="https://kit.fontawesome.com/d168e18a02.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<header th:replace="~{fragments/user/user_temp :: header}"></header>
+	<main>
+		<div class="cont-table">
+			<table class="mi-tabla">
+				<thead>
+					<tr>
+						<th scope="col">ID Noticia</th>
+						<th scope="col">Titulo</th>
+						<th scope="col">Acciones</th>
+					</tr>
+				</thead>
+				<tbody th:if="${estancias.isEmpty()}">
+					<tr>
+						<td colspan="3">No hay estancias disponibles actualmente</td>
+					</tr>
+				</tbody>
+				<tbody th:if="${estancias.size() > 0}">
+					<tr th:each="estancia : ${estancias}">
+						<th scope="row" th:text="${estancia.id}"></th>
+						<td th:text="${estancia.titulo}"></td>
+						<td	id="actions-ref">
+							<a th:href="@{/estancia/reserva/__${estancia.id}__}">Reservar</a>					
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</main>
+	<footer th:replace="~{fragments/user/user_temp :: footer}"></footer>
+</body>
+
+</html>

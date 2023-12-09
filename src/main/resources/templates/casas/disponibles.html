@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://thymeleaf.org/extras/spring-security">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Estancias - EGG</title>
+	<link href="/css/style.css" rel="stylesheet" type="text/css" />
+	<script src="https://kit.fontawesome.com/d168e18a02.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<header th:replace="~{fragments/user/user_temp :: header}"></header>
+	<main>
+		<div class="container-house">
+			<div class="casas-list">
+				<!-- Lista de casas -->
+				<ul>
+					<li th:each="casa : ${casas}">
+						<div class="cont-li house">
+							<div class="img-hs">
+								<img th:src="@{'/images/casa/' + ${casa.image}}" alt="foto-casa" id="house">
+							</div>
+
+							<div class="description-hs"
+								th:text="'Tipo Vivienda: ' + ${casa.tipoVivienda} + ' - Ubicacion: '+ ${casa.calle} + ' ' + ${casa.numero} +' - Pais: ' + ${casa.pais}">
+							</div>
+
+							<form th:action="@{/casa/delete/__${casa.id}__}" class="dlt-hs"method="post">
+								<button type="submit">Eliminar</button>
+							</form>
+
+							<div class="prc-act">
+								<a th:href="@{/casas/reserva/__${casa.id}__}" class="btn-rsv">Reserva</a>
+								<div th:text="${casa.precio}" class="price-sgn"></div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<!-- Paginación -->
+				<!--<div class="pagination">
+                    <a th:href="@{'/casas?page=' + (currentPage - 1)}" th:if="${currentPage > 1}">Anterior</a>
+                    <span th:text="${currentPage}"></span>
+                    <a th:href="@{'/casas?page=' + (currentPage + 1)}" th:if="${casas.size() == 5}">Siguiente</a>
+                </div> -->
+			</div>
+		</div>
+	</main>
+	<footer th:replace="~{fragments/user/user_temp :: footer}"></footer>
+</body>
+
+</html>
